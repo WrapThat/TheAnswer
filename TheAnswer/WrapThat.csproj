@@ -1,6 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <Title>TheAnswer library</Title>
+    <PackageId>WrapThat.Answer</PackageId>
+    <Description>Give you two static constants to use in tests, both have value 42, which is TheAnswer</Description>
     <TargetFramework>net5.0</TargetFramework>
     <IsPackable>true</IsPackable>
     <Authors>Terje Sandstrom</Authors>
@@ -9,6 +12,7 @@
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <Version>1.0.0</Version>
+    <RepositoryUrl>https://github.com/WrapThat/TheAnswer</RepositoryUrl>
   </PropertyGroup>
 
 </Project>
