@@ -16,5 +16,11 @@ namespace WrapThat.Tests
             var sut = 42;
             Assert.That(sut, Is.EqualTo(YouKnow.TheAnswer));
         }
+
+        [Test]
+        public void ThatMethodsAlsoWorks()
+        {
+            Assert.That(YouKnow.GiveMeTheAnswer(), Is.EqualTo(42));
+        }
     }
 }
