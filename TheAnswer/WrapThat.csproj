@@ -1,9 +1,9 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <Title>TheAnswer library</Title>
     <PackageId>WrapThat.Answer</PackageId>
-    <Version>1.0.0</Version>
+    <Version>1.1.0</Version>
     <Description>Give you two static constants to use in tests, both have value 42, which is TheAnswer</Description>
     <TargetFramework>net5.0</TargetFramework>
     <IsPackable>true</IsPackable>
