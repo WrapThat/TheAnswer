@@ -5,7 +5,7 @@
     <PackageId>WrapThat.Answer</PackageId>
     <Version>1.2.0</Version>
     <Description>Give you two static constants to use in tests, both have value 42, which is TheAnswer</Description>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <IsPackable>true</IsPackable>
     <Authors>Terje Sandstrom</Authors>
     <Copyright>2020 Terje Sandstrom</Copyright>
@@ -18,6 +18,10 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All"/>
+    <PackageReference Include="MinVer" Version="4.3.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
 </Project>
