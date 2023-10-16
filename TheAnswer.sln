@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30717.126
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34202.233
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WrapThat", "TheAnswer\WrapThat.csproj", "{55CB96DF-9BAC-4F69-828A-51222901B0CF}"
 EndProject
@@ -11,6 +11,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
 		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{FCA33868-8B13-44E1-89DC-07901E3864EA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{098014BA-87C8-404E-9EB6-CD70E4935787}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\TheAnswer.CI.yml = .github\workflows\TheAnswer.CI.yml
+		.github\workflows\TheAnswer.Nuget.yml = .github\workflows\TheAnswer.Nuget.yml
 	EndProjectSection
 EndProject
 Global
@@ -30,6 +38,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FCA33868-8B13-44E1-89DC-07901E3864EA} = {368AADF4-2384-4EAD-AC67-27FE958AFC00}
+		{098014BA-87C8-404E-9EB6-CD70E4935787} = {FCA33868-8B13-44E1-89DC-07901E3864EA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D7C164D9-8D40-4011-A588-A2EA4AC295CD}

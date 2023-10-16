@@ -3,7 +3,6 @@
   <PropertyGroup>
     <Title>TheAnswer library</Title>
     <PackageId>WrapThat.Answer</PackageId>
-    <Version>1.2.0</Version>
     <Description>Give you two static constants to use in tests, both have value 42, which is TheAnswer</Description>
     <TargetFramework>net6.0</TargetFramework>
     <IsPackable>true</IsPackable>
@@ -14,6 +13,7 @@
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <RepositoryUrl>https://github.com/WrapThat/TheAnswer</RepositoryUrl>
+    <MinVerTagPrefix>v</MinVerTagPrefix>
   </PropertyGroup>
 
   <ItemGroup>
