@@ -18,6 +18,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{098014BA-87C8-404E-9EB6-CD70E4935787}"
 	ProjectSection(SolutionItems) = preProject
 		.github\workflows\TheAnswer.CI.yml = .github\workflows\TheAnswer.CI.yml
+		.github\workflows\TheAnswer.Myget.yml = .github\workflows\TheAnswer.Myget.yml
 		.github\workflows\TheAnswer.Nuget.yml = .github\workflows\TheAnswer.Nuget.yml
 	EndProjectSection
 EndProject
