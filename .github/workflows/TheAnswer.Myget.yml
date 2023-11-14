@@ -1,4 +1,4 @@
-name: WrapThat.TheAnswer.Nuget
+name: WrapThat.TheAnswer.Myget
 on:
   workflow_dispatch:
     inputs:
