@@ -22,6 +22,8 @@
 
 <PropertyGroup Condition="'$(GITHUB_ACTIONS)' == 'true'">
    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+   <EnforceUntrackedSources>true</EnforceUntrackedSources>
+   <EnableSourceLink>true</EnableSourceLink>
 </PropertyGroup>
 
   <ItemGroup>
