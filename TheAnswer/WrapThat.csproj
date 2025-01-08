@@ -20,6 +20,10 @@
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
 
+<PropertyGroup Condition="'$(GITHUB_ACTIONS)' == 'true'">
+   <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+</PropertyGroup>
+
   <ItemGroup>
     <None Include="..\README.md" Pack="true" PackagePath="\"/>
   </ItemGroup>
