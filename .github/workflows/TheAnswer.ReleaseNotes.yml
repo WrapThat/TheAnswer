@@ -2,7 +2,9 @@ name: Extract Release Notes to Wiki
 
 on:
   release:
-    types: [published, edited, released]
+    types: 
+      - published
+      - edited
   workflow_dispatch:
 
 env:
