@@ -15,10 +15,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Wiki
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
-          repository: WrapThat/TheAnswer.wiki
-          token: ${{ secrets.WIKI_ACCESS_TOKEN }}
+          repository: ${{github.repository}}.wiki
+
 
       - name: Extract Release Notes
         run: |
