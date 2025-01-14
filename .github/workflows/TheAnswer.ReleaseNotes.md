@@ -1,0 +1,43 @@
+name: Extract Release Notes to Wiki
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+jobs:
+  update-wiki:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Wiki
+        uses: actions/checkout@v3
+        with:
+          repository: ${{ github.repository }}.wiki
+
+      - name: Extract Release Notes
+        run: |
+          # Define the file to update
+          FILE="Release-Notes.md"
+
+          # Fetch the latest release notes
+          RELEASE_NOTES=$(gh release view ${{ github.event.release.tag_name }} --json body -q ".body")
+
+          # Format the new release notes with a header
+          NEW_CONTENT="## ${{ github.event.release.tag_name }} - $(date +"%Y-%m-%d")\n\n$RELEASE_NOTES\n\n"
+
+          # If the file exists, append new notes at the top; otherwise, create it
+          if [ -f "$FILE" ]; then
+            echo -e "$NEW_CONTENT$(cat $FILE)" > "$FILE"
+          else
+            echo -e "$NEW_CONTENT" > "$FILE"
+          fi
+
+      - name: Commit and Push to Wiki
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "Update release notes for ${{ github.event.release.tag_name }}"
+          git push
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
