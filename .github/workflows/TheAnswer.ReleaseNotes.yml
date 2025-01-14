@@ -37,7 +37,7 @@ jobs:
       - name: Extract Release Notes
         run: |
           # Change directory to the main code repository
-          cd $GITHUB_WORKSPACE/main_repo
+          cd $GITHUB_WORKSPACE/code
           # Fetch the latest release notes
           RELEASE_NOTES=$(gh release view ${{ github.event.release.tag_name }} --json body -q ".body")
 
