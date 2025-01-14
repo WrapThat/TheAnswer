@@ -2,7 +2,7 @@ name: Extract Release Notes to Wiki
 
 on:
   release:
-    types: [published]
+    types: [published, edited, released]
   workflow_dispatch:
 
 env:
@@ -22,7 +22,7 @@ jobs:
         run: |
           # Define the file to update
           FILE="Release-Notes.md"
-
+          echo ${{ github.event.release.tag_name }}
           # Fetch the latest release notes
           RELEASE_NOTES=$(gh release view ${{ github.event.release.tag_name }} --json body -q ".body")
 
