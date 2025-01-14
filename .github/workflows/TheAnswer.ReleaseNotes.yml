@@ -20,12 +20,11 @@ jobs:
           gh auth status
         env:
           GH_TOKEN: ${{ github.token }}
-          
+
       - name: Checkout Wiki
         uses: actions/checkout@v4
         with:
           repository: ${{github.repository}}.wiki
-
 
       - name: Extract Release Notes
         run: |
@@ -34,7 +33,7 @@ jobs:
           echo ${{ github.event.release.tag_name }}
           # Fetch the latest release notes
           RELEASE_NOTES=$(gh release view ${{ github.event.release.tag_name }} --json body -q ".body")
-
+          echo $RELEASE_NOTES
           # Format the new release notes with a header
           NEW_CONTENT="## ${{ github.event.release.tag_name }} - $(date +"%Y-%m-%d")\n\n$RELEASE_NOTES\n\n"
 
