@@ -18,11 +18,13 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: ${{github.repository}}.wiki
+          path: ${{github.repository}}.wiki
 
 
       - name: Extract Release Notes
         run: |
           # Define the file to update
+          cd $GITHUB_WORKSPACE/${{github.repository}}.wiki
           FILE="Release-Notes.md"
           echo ${{ github.event.release.tag_name }}
           # Fetch the latest release notes
