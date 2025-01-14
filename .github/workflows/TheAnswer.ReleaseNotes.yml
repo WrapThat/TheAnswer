@@ -14,17 +14,22 @@ jobs:
   update-wiki:
     runs-on: ubuntu-latest
     steps:
+      - name: Verify gh CLI
+        run: |
+          gh --version
+          gh auth status
+        env:
+          GH_TOKEN: ${{ github.token }}
+          
       - name: Checkout Wiki
         uses: actions/checkout@v4
         with:
           repository: ${{github.repository}}.wiki
-          path: ${{github.repository}}.wiki
 
 
       - name: Extract Release Notes
         run: |
           # Define the file to update
-          cd $GITHUB_WORKSPACE/${{github.repository}}.wiki
           FILE="Release-Notes.md"
           echo ${{ github.event.release.tag_name }}
           # Fetch the latest release notes
