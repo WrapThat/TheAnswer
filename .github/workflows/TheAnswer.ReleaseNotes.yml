@@ -21,19 +21,30 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
 
-      - name: Checkout Wiki
+      - name: Checkout Code Repository
         uses: actions/checkout@v4
         with:
-          repository: ${{github.repository}}.wiki
+          repository: ${{ github.repository }}
+          path: code
+  
+      - name: Checkout Wiki Repository
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository }}.wiki
+          path: wiki
+  
 
       - name: Extract Release Notes
         run: |
-          # Define the file to update
-          FILE="Release-Notes.md"
-          echo ${{ github.event.release.tag_name }}
+          # Change directory to the main code repository
+          cd $GITHUB_WORKSPACE/main_repo
           # Fetch the latest release notes
           RELEASE_NOTES=$(gh release view ${{ github.event.release.tag_name }} --json body -q ".body")
-          echo $RELEASE_NOTES
+
+          # Define the file to update
+          cd $GITHUB_WORKSPACE/wiki
+          FILE="Release-Notes.md"
+          echo ${{ github.event.release.tag_name }}
           # Format the new release notes with a header
           NEW_CONTENT="## ${{ github.event.release.tag_name }} - $(date +"%Y-%m-%d")\n\n$RELEASE_NOTES\n\n"
 
