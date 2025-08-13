@@ -17,9 +17,8 @@ jobs:
       with:
         dotnet-version: 8.0.x
     - name: Install dependencies
-      run: |
-        dotnet restore
-        dotnet msbuild TheAnswer/WrapThat.csproj -nologo -getProperty:MinVerVersion
+      run: dotnet restore
+
     - name: Build
       run: dotnet build --configuration Release --no-restore --verbosity normal
     - name: Test

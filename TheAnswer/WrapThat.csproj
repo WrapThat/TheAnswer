@@ -40,4 +40,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <Target Name="PrintMinVerVersion" DependsOnTargets="MinVer">
+    <Message Text="$(MinVerVersion)" Importance="high" />
+  </Target>
+
 </Project>
