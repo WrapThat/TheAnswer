@@ -19,7 +19,7 @@ jobs:
     - name: Install dependencies
       run: |
         dotnet restore
-        dotnet msbuild -nologo -getProperty:MinVerVersion
+        dotnet msbuild TheAnswer/WrapThat.csproj -nologo -getProperty:MinVerVersion
     - name: Build
       run: dotnet build --configuration Release --no-restore --verbosity normal
     - name: Test
