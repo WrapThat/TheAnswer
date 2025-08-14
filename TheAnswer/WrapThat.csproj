@@ -5,7 +5,6 @@
     <PackageId>WrapThat.Answer</PackageId>
     <Description>Give you two static constants to use in tests, both have value 42, which is TheAnswer</Description>
     <TargetFramework>net8.0</TargetFramework>
-    <IsPackable>true</IsPackable>
     <Authors>Terje Sandstrom</Authors>
     <Copyright>2020 Terje Sandstrom</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
@@ -14,10 +13,8 @@
     <MinVerTagPrefix></MinVerTagPrefix>
     <MinVerVerbosity>normal</MinVerVerbosity>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
-    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <IncludeSymbols>true</IncludeSymbols>
-    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
 
 <PropertyGroup Condition="'$(GITHUB_ACTIONS)' == 'true'">
