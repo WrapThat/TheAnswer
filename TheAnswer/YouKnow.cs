@@ -1,4 +1,4 @@
-﻿namespace WrapThat;
+﻿namespace TheAnswer;
 
 /// <summary>
 /// A static class that provides the answer to the ultimate question of life, the universe, and everything.
