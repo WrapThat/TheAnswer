@@ -10,19 +10,26 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <RepositoryUrl>https://github.com/WrapThat/TheAnswer</RepositoryUrl>
-    <MinVerTagPrefix></MinVerTagPrefix>
+    <MinVerTagPrefix/>
     <MinVerVerbosity>normal</MinVerVerbosity>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <IncludeSymbols>true</IncludeSymbols>
   </PropertyGroup>
 
-<PropertyGroup Condition="'$(GITHUB_ACTIONS)' == 'true'">
-   <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
-   <EmbedUntrackedSources>true</EmbedUntrackedSources>
-   <EnforceUntrackedSources>true</EnforceUntrackedSources>
-   <EnableSourceLink>true</EnableSourceLink>
-</PropertyGroup>
+  <PropertyGroup Condition="'$(GITHUB_REF_NAME)' == 'main'">
+    <MinVerDefaultPreReleaseIdentifiers>beta</MinVerDefaultPreReleaseIdentifiers>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(GITHUB_REF_NAME)' != 'main'">
+    <MinVerDefaultPreReleaseIdentifiers>alpha</MinVerDefaultPreReleaseIdentifiers>
+  </PropertyGroup>  
+
+  <PropertyGroup Condition="'$(GITHUB_ACTIONS)' == 'true'">
+    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <EnforceUntrackedSources>true</EnforceUntrackedSources>
+    <EnableSourceLink>true</EnableSourceLink>
+  </PropertyGroup>
 
   <ItemGroup>
     <None Include="..\README.md" Pack="true" PackagePath="\" />
